@@ -3,7 +3,7 @@
   tasks:
     - name: Create Jenkins Jobs
       community.general.jenkins_job:
-        config: "{{ lookup('file', 'templates/job.xml') }}"
+        config: "{{ lookup('file', 'job.xml') }}"
         name: test1
         password: admin123
         url: http://172.31.87.110:8080
