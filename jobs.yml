@@ -17,7 +17,7 @@
 
     - name: Create Jenkins Job - Backend
       community.general.jenkins_job:
-        config: "{{ lookup('file', 'job.xml') }}"
+        config: "{{ lookup('template', 'job.xml') }}"
         name: backend
         password: "{{jenkins_password}}"
         url: http://172.31.87.110:8080
@@ -27,7 +27,7 @@
 
     - name: Create Jenkins Job - Expense Parameters
       community.general.jenkins_job:
-        config: "{{ lookup('file', 'job.xml') }}"
+        config: "{{ lookup('template', 'job.xml') }}"
         name: expense-Parameters
         password: "{{jenkins_password}}"
         url: http://172.31.87.110:8080
@@ -37,7 +37,7 @@
 
     - name: Create Jenkins Job - Expense terraform
       community.general.jenkins_job:
-        config: "{{ lookup('file', 'job.xml') }}"
+        config: "{{ lookup('template', 'job.xml') }}"
         name: expense-terraform
         password: "{{jenkins_password}}"
         url: http://172.31.87.110:8080
