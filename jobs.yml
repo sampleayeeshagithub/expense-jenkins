@@ -95,6 +95,6 @@
         url: http://172.31.87.110:8080
         user: "{{jenkins_user}}"
       vars:
-        repo_name: roboshop-terraform
+        repo_name: roboshop-terraform1
         auto_trigger: "false"
         file_name: Jenkinsfile
