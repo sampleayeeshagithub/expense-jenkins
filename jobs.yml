@@ -1,7 +1,7 @@
 - name: Ansible Jobs Create
   hosts: localhost
   vars:
-    jenkins_url: http://172.31.87.110:8080
+    jenkins_url: http://172.31.40.193:8080
     jenkins_user: admin
     jenkins_password: "{{ lookup('aws_ssm', 'jenkins_password', region='us-east-1' ) }}"
   tasks:
@@ -21,7 +21,7 @@
         config: "{{ lookup('template', 'mjob.xml') }}"
         name: backend
         password: "{{jenkins_password}}"
-        url: http://172.31.87.110:8080
+        url: http://172.31.40.193:8080
         user: "{{jenkins_user}}"
       vars:
         repo_name: backend
@@ -32,7 +32,7 @@
         config: "{{ lookup('template', 'mjob.xml') }}"
         name: expense-schema-load
         password: "{{jenkins_password}}"
-        url: http://172.31.87.110:8080
+        url: http://172.31.40.193:8080
         user: "{{jenkins_user}}"
       vars:
         repo_name: expense-schema-load
@@ -43,7 +43,7 @@
         config: "{{ lookup('template', 'mjob.xml') }}"
         name: expense-parameter-init-container
         password: "{{jenkins_password}}"
-        url: http://172.31.87.110:8080
+        url: http://172.31.40.193:8080
         user: "{{jenkins_user}}"
       vars:
         repo_name: expense-parameter-init-container
@@ -54,7 +54,7 @@
         config: "{{ lookup('template', 'job.xml') }}"
         name: expense-Parameters
         password: "{{jenkins_password}}"
-        url: http://172.31.87.110:8080
+        url: http://172.31.40.193:8080
         user: "{{jenkins_user}}"
       vars:
         repo_name: parameter-store
@@ -66,7 +66,7 @@
         config: "{{ lookup('template', 'job.xml') }}"
         name: expense-terraform
         password: "{{jenkins_password}}"
-        url: http://172.31.87.110:8080
+        url: http://172.31.40.193:8080
         user: "{{jenkins_user}}"
       vars:
         repo_name: expense-terraform
@@ -78,7 +78,7 @@
         config: "{{ lookup('template', 'job.xml') }}"
         name: mutable-deployment
         password: "{{jenkins_password}}"
-        url: http://172.31.87.110:8080
+        url: http://172.31.40.193:8080
         user: "{{jenkins_user}}"
       vars:
         repo_name: infra-ansible
@@ -92,7 +92,7 @@
         config: "{{ lookup('template', 'job.xml') }}"
         name: roboshop-terraform
         password: "{{jenkins_password}}"
-        url: http://172.31.87.110:8080
+        url: http://172.31.40.193:8080
         user: "{{jenkins_user}}"
       vars:
         repo_name: roboshop-terraform1
